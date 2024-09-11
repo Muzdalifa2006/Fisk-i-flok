@@ -16,10 +16,12 @@ class Fish:
 
     def update(self):
         self.position = self.position + self.velocity
-        if self.position.x <= 0 or self.position.x >= 800:
-            self.position.x = -self.velocity.x
-        if self.position.y <= 0 or self.position.y >= 600:
-            self.position.y = -self.velocity.y
+        if self.position.x <= 0 or self.position.x >= self.screen.get_width():
+            self.velocity.x = -self.velocity.x
+        if self.position.y <= 0 or self.position.y >= self.screen.get_height():
+            print(self.position.y)
+            self.velocity.y = -self.velocity.y
+            print(self.velocity.y)
 
     def draw(self, screen):
         screen.blit(fish_img, (self.position.x, self.position.y))

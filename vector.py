@@ -11,6 +11,14 @@ class Vector:
     def y(self):
         return self.__y
     
+    @x.setter
+    def x(self, x):
+        self__x = x
+
+    @y.setter
+    def y(self, y):
+        self__y = y
+    
     def __add__(self, other):
         return Vector(self.__x + other.x, self.__y + other.y)
     
